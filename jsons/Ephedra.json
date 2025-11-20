@@ -1,0 +1,17 @@
+{
+    "Title": "Ephedra",
+    "Overview": "Ephedra is a stimulant herb that has been used in traditional Chinese medicine.",
+    "OtherSections": {
+        "Safety": "Consult healthcare provider before use, especially with pre-existing conditions.",
+        "AdverseEffects": "May cause Hypertension, Tachycardia, Arrhythmia, Myocardial Infarction, Palpitations, Angina pectoris, Heart failure. Can lead to sudden cardiac death in susceptible individuals.",
+        "Effectiveness": "Clinical evidence varies. Consult medical literature for specific conditions.",
+        "Dosing&Administration": "Follow healthcare provider recommendations or product labeling.",
+        "InteractionswithDrugs": "May interact with multiple medications. Consult healthcare provider.",
+        "InteractionswithSupplements": "May interact with other supplements. Use caution.",
+        "InteractionswithConditions": "Contraindicated in patients with Cardiovascular disease, Hypertension, Coronary artery disease, Arrhythmia. Use with extreme caution in patients with heart conditions.",
+        "InteractionswithLabTests": "May affect certain laboratory test results.",
+        "Overdose": "Seek immediate medical attention if overdose suspected.",
+        "Pharmacokinetics": "Pharmacokinetic data may be limited for herbal products.",
+        "MechanismofAction": "Mechanism of action varies by substance and may not be fully understood."
+    }
+}

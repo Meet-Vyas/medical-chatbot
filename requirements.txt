@@ -1,0 +1,25 @@
+# Medical Knowledge Graph Chatbot - Requirements
+# Phase 2: Vector Search + Re-ranking + LLM
+
+# Core dependencies
+neo4j>=5.0.0
+
+# Embedding and vector search
+sentence-transformers>=2.2.0
+torch>=2.0.0
+
+# Cross-encoder for re-ranking
+# (included in sentence-transformers)
+
+# HTTP requests for Ollama
+requests>=2.31.0
+
+# Progress bars
+tqdm>=4.65.0
+
+# Optional: For GPU support on M-series Mac
+# PyTorch with Metal support is included by default on Mac
+
+# Note: Ollama must be installed separately
+# Install from: https://ollama.ai
+# Then run: ollama pull mistral:7b

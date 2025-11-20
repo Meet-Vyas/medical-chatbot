@@ -1,0 +1,17 @@
+{
+    "Title": "Green Tea Extract",
+    "Overview": "High-dose green tea extract has hepatotoxic potential.",
+    "OtherSections": {
+        "Safety": "Consult healthcare provider before use, especially with pre-existing conditions.",
+        "AdverseEffects": "May cause Hepatotoxicity, Liver damage, Elevated liver enzymes, Jaundice, ALT elevation, AST elevation, Hepatitis.",
+        "Effectiveness": "Clinical evidence varies. Consult medical literature for specific conditions.",
+        "Dosing&Administration": "Follow healthcare provider recommendations or product labeling.",
+        "InteractionswithDrugs": "May interact with multiple medications. Consult healthcare provider.",
+        "InteractionswithSupplements": "May interact with other supplements. Use caution.",
+        "InteractionswithConditions": "Avoid high doses in liver disease. Monitor for Hepatotoxicity, Liver damage.",
+        "InteractionswithLabTests": "May affect certain laboratory test results.",
+        "Overdose": "Seek immediate medical attention if overdose suspected.",
+        "Pharmacokinetics": "Pharmacokinetic data may be limited for herbal products.",
+        "MechanismofAction": "Mechanism of action varies by substance and may not be fully understood."
+    }
+}

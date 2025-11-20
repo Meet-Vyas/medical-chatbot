@@ -1,0 +1,17 @@
+{
+    "Title": "Fish Oil",
+    "Overview": "Fish oil omega-3 fatty acids can affect blood clotting.",
+    "OtherSections": {
+        "Safety": "Consult healthcare provider before use, especially with pre-existing conditions.",
+        "AdverseEffects": "May increase Bleeding risk, Hemorrhage, Bruising, Prolonged bleeding time.",
+        "Effectiveness": "Clinical evidence varies. Consult medical literature for specific conditions.",
+        "Dosing&Administration": "Follow healthcare provider recommendations or product labeling.",
+        "InteractionswithDrugs": "May interact with multiple medications. Consult healthcare provider.",
+        "InteractionswithSupplements": "May interact with other supplements. Use caution.",
+        "InteractionswithConditions": "Use cautiously with Anticoagulation therapy, Thrombocytopenia. Monitor for Bleeding complications.",
+        "InteractionswithLabTests": "May affect certain laboratory test results.",
+        "Overdose": "Seek immediate medical attention if overdose suspected.",
+        "Pharmacokinetics": "Pharmacokinetic data may be limited for herbal products.",
+        "MechanismofAction": "Mechanism of action varies by substance and may not be fully understood."
+    }
+}

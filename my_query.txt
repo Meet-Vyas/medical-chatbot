@@ -1,0 +1,66 @@
+# query 1
+Which substances are contraindicated or carry hepatotoxicity risk for patients with liver disease 
+(e.g., hepatitis, cirrhosis)? Please list substances and relevant sections.
+# answer
+perfect answer
+
+# negative query 1
+Who is Meet Vyas?
+
+# query 2
+For a patient who has both diabetes and heart disease, 
+which substances are recommended, which are contraindicated or should be avoided, 
+and what interactions or safety notes are given? 
+Please cite the substance name and the exact source section for each item.
+# answer 
+good answer. no common substance and gave individual substances
+
+# negative query 2
+what is earth?
+
+# query 3
+I am taking anticoagulant therapy, can I consume ginger?
+
+# query 4
+Which supplements/substances are contraindicated or require monitoring in patients 
+who have both diabetes and hypertension? 
+Please list substances, the specific safety concerns, and the source section for each.
+# answer
+good answer. no common substance and gave individual substances
+
+# negative query 3
+how is the movie Kal ho na ho?
+
+# query 5
+For someone who is also taking anticoagulant therapy, 
+which supplements increase bleeding risk or interact with anticoagulants? 
+Cite substance and source section.
+# answer
+correctly mentions the substance
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# query 5
+Which substances are unsafe or should be avoided during pregnancy? 
+For each, give the reason (if listed) and source section.
+
+# query 6
+For patients with chronic kidney disease, which substances are contraindicated, 
+may worsen kidney function, or require dose adjustment? Please cite substance and section.
+
+# query 7
+In older adults on multiple medications (polypharmacy), which supplements increase fall risk, sedation, 
+or clinically relevant interactions? Cite substance and section.
+
+# query 8
+Which supplements should be stopped before surgery due to bleeding risk or anesthetic interactions? 
+Give substance, recommended stop interval (if listed), and source section.
+
+# query 9
+Which substances can cause or exacerbate hypoglycemia in people with diabetes? 
+Please list substances, the mechanism if available, and source section.
+
+# query 10
+Which supplements interact with antidepressants (SSRIs, MAOIs) or increase serotonin risk? 
+List substances, interaction type, and source section.
+
