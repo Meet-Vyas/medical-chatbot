@@ -84,26 +84,30 @@ chatbot2-ui/
 ### Installation
 
 1. **Install Python dependencies:**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 2. **Install backend API dependencies:**
+
    ```bash
    pip install -r backend/requirements_api.txt
    ```
 
 3. **Install frontend dependencies:**
+
    ```bash
    cd frontend
    npm install
    ```
 
 4. **Install and start Ollama:**
+
    ```bash
    # Download from: https://ollama.ai
    ollama serve
-   
+
    # In another terminal:
    ollama pull mistral:7b
    ```
@@ -123,12 +127,14 @@ python -m core.embedding_manager
 ```
 
 This will:
+
 - Load all Section nodes from Neo4j
 - Generate BGE embeddings for each section (with entities)
 - Store embeddings in Section.embedding property
 - Create Neo4j vector index
 
 **Expected time:**
+
 - 150 sections (15 JSONs): ~2-3 minutes
 - 14,000 sections (1421 JSONs): ~30-40 minutes
 
@@ -139,6 +145,7 @@ python -m core.embedding_manager --verify
 ```
 
 Should show:
+
 ```
 Total sections: 150
 Sections with embeddings: 150
@@ -155,6 +162,7 @@ python terminal_interface.py
 ```
 
 Interactive commands:
+
 - Type your question and press Enter
 - `help` - Show commands
 - `verbose on/off` - Toggle detailed progress
@@ -163,12 +171,14 @@ Interactive commands:
 ### Option 2: Web Interface
 
 **Terminal 1 - Start Backend:**
+
 ```bash
 cd backend
 python app.py
 ```
 
 Or use the startup script:
+
 ```bash
 ./start_backend.sh
 ```
@@ -176,6 +186,7 @@ Or use the startup script:
 The API will be available at: `http://localhost:8000`
 
 **Terminal 2 - Start Frontend:**
+
 ```bash
 cd frontend
 npm start
@@ -202,24 +213,29 @@ API documentation available at: `http://localhost:8000/docs`
 ## 📝 Example Queries
 
 ### Adverse Effects
+
 - "What are the side effects of asparagus?"
 - "Can X cause allergic reactions?"
 - "Is X safe?"
 
 ### Safety & Contraindications
+
 - "Can pregnant women take X?"
 - "Is X safe for people with liver disease?"
 - "Who should avoid X?"
 
 ### Drug Interactions
+
 - "Does X interact with Y?"
 - "Can I take X with diuretics?"
 
 ### Effectiveness
+
 - "Is X effective for treating Y?"
 - "Does X help with Z?"
 
 ### Dosing
+
 - "What is the recommended dosage?"
 - "How much X should I take?"
 
@@ -228,6 +244,7 @@ API documentation available at: `http://localhost:8000/docs`
 Edit `core/config.py` to customize:
 
 ### Models
+
 ```python
 # Embedding model
 EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"  # 384 dimensions
@@ -241,6 +258,7 @@ OLLAMA_MODEL = "mistral:7b"
 ```
 
 ### Search Parameters
+
 ```python
 # Vector search
 TOP_K_VECTOR_SEARCH = 10  # Sections retrieved from vector search
@@ -251,6 +269,7 @@ TOP_N_RERANKED = 3  # Sections sent to LLM after re-ranking
 ```
 
 ### LLM Parameters
+
 ```python
 OLLAMA_TEMPERATURE = 0.1  # Low temp for factual answers
 OLLAMA_MAX_TOKENS = 1000
@@ -279,12 +298,12 @@ python -m core.query_pipeline
 
 ### Response Times (M3 Mac, 150 sections)
 
-| Step | Time |
-|------|------|
-| Vector Search | ~0.1s |
-| Re-ranking | ~0.3s |
-| LLM Generation | ~2-3s |
-| **Total** | **~2.5-3.5s** |
+| Step           | Time          |
+| -------------- | ------------- |
+| Vector Search  | ~0.1s         |
+| Re-ranking     | ~0.3s         |
+| LLM Generation | ~2-3s         |
+| **Total**      | **~2.5-3.5s** |
 
 ### Scaling (1421 JSONs, 14,000 sections)
 
@@ -324,6 +343,7 @@ python -m core.embedding_manager --verify
 ### Neo4j Connection Failed
 
 Check:
+
 1. Neo4j is running: `http://localhost:7474`
 2. Password in `core/config.py` is correct
 3. Graph from Phase 1 exists with Section nodes
@@ -331,11 +351,13 @@ Check:
 ### Slow Performance
 
 **For M3 Mac:**
+
 - Embedding generation: Uses CPU (Metal acceleration for inference only)
 - LLM generation: Ollama uses Metal automatically
 - Should be ~3-4s per query
 
 **If slower:**
+
 - Check Ollama is using Metal: `ollama list` should show model loaded
 - Reduce `TOP_K_VECTOR_SEARCH` to 5
 - Reduce `TOP_N_RERANKED` to 2
@@ -343,12 +365,14 @@ Check:
 ### Poor Answer Quality
 
 **If answers are generic or miss information:**
+
 1. Check embeddings are generated: `python -m core.embedding_manager --verify`
 2. Try increasing `TOP_K_VECTOR_SEARCH` to 15-20
 3. Enable verbose mode to see retrieved sections
 4. Check if relevant sections exist in graph (Phase 1)
 
 **If answers hallucinate:**
+
 - Verify `STRICT_MODE = True` in config
 - Check system prompt in `core/config.py`
 - Reduce `OLLAMA_TEMPERATURE` to 0.05
@@ -372,6 +396,7 @@ Cross-encoder scores each (query, section_context) pair and re-ranks to keep top
 ### LLM Generation (Step 5)
 
 Strict prompt prevents hallucination:
+
 - System prompt instructs to answer ONLY from provided context
 - Low temperature (0.1) for factual responses
 - Source attribution included in answers
@@ -391,6 +416,7 @@ This chatbot is for educational/research purposes only. Always consult healthcar
 ### Hallucination Prevention
 
 The system uses:
+
 1. Strict prompts ("answer ONLY from context")
 2. Low temperature (0.1)
 3. Source attribution
@@ -401,6 +427,7 @@ But LLMs can still hallucinate. Always verify critical information!
 ## 📈 Evaluation Metrics
 
 ### Recall@K
+
 Did we retrieve the right section in top-K results?
 
 ```python
@@ -410,12 +437,15 @@ Recall@3 (after re-ranking): ~92%
 ```
 
 ### Response Accuracy
+
 Human evaluation of answer correctness:
+
 - Check against source material
 - Flag any hallucinations
 - Rate helpfulness (1-5)
 
 ### Response Time
+
 Target: < 5 seconds per query
 
 ## 🎓 Project Context
@@ -423,34 +453,17 @@ Target: < 5 seconds per query
 This is Phase 2 of a medical knowledge graph project:
 
 **Phase 1 (Graph Generation):**
+
 - Ingest Netmeds JSONs
 - Extract entities with BioBERT
 - Create Neo4j graph with Section nodes
 
 **Phase 2 (This Repo):**
+
 - Add embeddings to Section nodes
 - Vector search + re-ranking
 - LLM answer generation
 - Zero hallucination via strict prompts
-
-## 📝 Next Steps
-
-**For Production:**
-1. Add authentication
-2. Multi-turn conversations with context
-3. Query result caching
-4. User feedback collection
-5. A/B testing different models
-
-**For Evaluation:**
-1. Expand test dataset to 100+ queries
-2. Human evaluation protocol
-3. Compare with baseline (no re-ranking)
-4. Test different models (llama vs mistral)
-
-## 🤝 Contributing
-
-This is a course project. Suggestions welcome!
 
 ## 📄 License
 
