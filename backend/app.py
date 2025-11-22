@@ -19,11 +19,16 @@ from backend.api.routes import router, set_pipeline
 from core import config
 
 # Setup logging
+# Resolve log file path relative to project root
+log_file_path = os.path.join(project_root, config.LOG_FILE)
+log_dir = os.path.dirname(log_file_path)
+os.makedirs(log_dir, exist_ok=True)
+
 logging.basicConfig(
     level=getattr(logging, config.LOG_LEVEL),
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler(config.LOG_FILE),
+        logging.FileHandler(log_file_path),
         logging.StreamHandler()
     ]
 )
