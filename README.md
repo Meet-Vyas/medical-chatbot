@@ -12,6 +12,14 @@ This chatbot implements a complete RAG (Retrieval-Augmented Generation) pipeline
 
 **Key Feature:** Strict mode prevents hallucination - answers only from retrieved context.
 
+## 📸 Screenshots
+
+![Medical Chatbot UI](docs/images/medical_chatbot_ui_1.png)
+*Chatbot interface showing source attribution*
+
+![Medical Chatbot Conversation](docs/images/medical_chatbot_ui_2.png)
+*Example conversation flow*
+
 ## 📊 Architecture
 
 ```
